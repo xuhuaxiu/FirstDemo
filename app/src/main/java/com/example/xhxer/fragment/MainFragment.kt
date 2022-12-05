@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.xhxer.R
 import com.example.xhxer.common.initMain
+import com.example.xhxer.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -14,19 +15,11 @@ import kotlinx.android.synthetic.main.fragment_main.*
  * 时间  : 2022/11/28
  * 描述  :
  */
-class MainFragment: Fragment() {
+class MainFragment: BaseFragment<MainViewModel>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_main,container,false)
-    }
+    override fun layoutId(): Int = R.layout.fragment_main
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initView(savedInstanceState: Bundle?) {
         view_page.initMain(this)
         setClick()
     }

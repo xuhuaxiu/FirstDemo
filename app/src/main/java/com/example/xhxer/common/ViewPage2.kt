@@ -24,3 +24,4 @@ fun ViewPager2.initMain(fragment:Fragment): ViewPager2{
     }
     return this
 }
+
